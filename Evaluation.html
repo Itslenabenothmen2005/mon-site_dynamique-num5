@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Evaluation D'un Hôtel</title>
+    <script src="controle.js"></script>
+  </head>
+
+  <body onload="GenererCaptcha()">
+    <h1 align="Center">Évaluation D'un Hôtel</h1>
+    <form
+      name="F"
+      method="post"
+      action="evaluation.php"
+      onsubmit="return Verif()"
+    >
+      <!-- début-choix d'un hôtel -->
+      <table width="100%">
+        <tr>
+          <td width="100">Hôtel:</td>
+          <td>
+            <select name="D1">
+              <option selected>Choisir Un Hôtel</option>
+              <option value="10">5 Stars</option>
+              <option value="20">Globe</option>
+              <option value="30">The Sun</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <!-- fin-choix d'un hôtel -->
+
+      <!-- début-évaluation -->
+      <table border="1" width="100%" cellspacing="5">
+        <tr>
+          <td width="100">Accueil:</td>
+          <td>
+            <input type="radio" value="3" name="R1" id="r11" />Très
+            Satistfaisant
+            <input type="radio" value="2" name="R1" id="r12" />Satistfaisant
+            <input type="radio" value="1" name="R1" id="r13" />Peu Satistfaisant
+          </td>
+        </tr>
+        <tr>
+          <td width="100">Restauration:</td>
+          <td>
+            <input type="radio" value="3" name="R2" id="r21" />Très
+            Satistfaisant
+            <input type="radio" value="2" name="R2" id="r22" />Satistfaisant
+            <input type="radio" value="1" name="R2" id="r23" />Peu Satistfaisant
+          </td>
+        </tr>
+        <tr>
+          <td width="100">Extra:</td>
+          <td>
+            <input type="Checkbox" name="C1" value="4" />Piscine Couverts<br />
+            <input type="Checkbox" name="C2" value="2" />Plage Privée<br />
+            <input type="Checkbox" name="C3" value="1" />Couverture Wifi
+          </td>
+        </tr>
+      </table>
+      <!-- fin-évaluation -->
+
+      <!-- début-captcha et validation -->
+      <table border="0" width="100%" cellspacing="5">
+        <tr>
+          <td align="right">Captcha:</td>
+          <td>
+            <input type="Text" name="T1" id="cap" />
+            <input
+              type="button"
+              value="actualiser"
+              onclick="GenererCaptcha()"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <i> Combien de lettres majuscules dans la zone captcha ? </i>
+          </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td align="right">Réponse:</td>
+          <td><input type="Text" name="T2" id="rep" /></td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>
+            <input type="Reset" value="Annuler" name="b2" />&emsp;
+            <input type="submit" value="Valider" name="b1" />
+          </td>
+        </tr>
+      </table>
+      <!-- fin-captcha et validation -->
+    </form>
+  </body>
+</html>
